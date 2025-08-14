@@ -1,0 +1,95 @@
+body {
+    background-color: lightcyan;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: yellow;
+    font-weight: bold;
+}
+
+h2 {
+    font-family: cursive;
+    color: black;
+}
+
+.site-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: lightblue;
+    padding: 1rem;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+label {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+input, textarea, button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background: lightblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: lightblue;
+}
+
+.error {
+    color: lightcyan;
+}
+
+.success {
+    color: teal;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 1rem;
+    background: lightblue;
+    color: white;
+}
+
+@media (min-width: 768px) {
+    .layout {
+        grid-template-columns: 1fr 1fr;
+    }
+}

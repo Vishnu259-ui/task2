@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>APEX INT TASK1</title>
+         <link rel="icon" type="image/jpg" href="C:\Users\mandala\OneDrive\Desktop\OIP.jpg">
+         <link rel="stylesheet" href="stylesheet.css">
+    </head>
+    <body style="background-color:lightgreen">
+        <header style="background-color: cyan;">
+            <h1>Apexplanet task 1</h1>
+                <h2>
+            my name is vishnu
+        </h2>
+        <h3>An Intern</h3>
+    </header>
+    <a href="https://www.linkedin.com/in/vishnu-vardhan-goud-mandala-6852a2284?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B1KsoGUBTTBqOT0iN1rZWPA%3D%3D"><img src="C:\Users\mandala\OneDrive\Desktop\download.jpg" width="250"></a>
+        <br>
+        <pr>
+            Apex Planet Software Pvt. Ltd. is a premier software development company specializing in delivering cutting-edge technology solutions to clients worldwide. Our team of dedicated professionals is committed to innovation, excellence, and the highest standards of quality in software development.
+        </pr><br><br>
+        <a href="https://www.linkedin.com/in/vishnu-vardhan-goud-mandala-6852a2284?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B1KsoGUBTTBqOT0iN1rZWPA%3D%3D"
+            target="_blank"
+            title="M.VISHNU">MY PORTFOLIO
+        </a>
+        <br><br>
+         <audio controls autoplay muted loop>
+            <source src="C:\Users\mandala\Downloads\Amberlight-chosic.com_.mp3">
+        </audio><br>
+       <br>
+         <main class="layout">
+            <!-- Contact Form -->
+            <section id="contact" class="card">
+                <h2>Contact Us</h2>
+                <form id="contactForm" novalidate>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required></textarea>
+
+                    <small class="error" id="formError"></small>
+                    <p class="success" id="formSuccess" hidden>✅ Your message was sent!</p>
+
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+             <!-- To-Do List -->
+            <section id="todo" class="card">
+                <h2>To-Do List</h2>
+                <form id="todoForm">
+                    <input type="text" id="todoInput" placeholder="Add a new task..." />
+                    <button type="submit">Add</button>
+                </form>
+                <ul id="todoList"></ul>
+                <button id="clearAll">Clear All</button>
+            </section>
+        </main>
+
+        <footer style="background-color: cyan">
+             <a href="mailto:mandalavishnu25@gmail.com">
+            email me
+        </a><br>
+        <button onclick="dosomething()" style="font-size:25px;background-color:lightblue;border-radius:25px">click me</button>
+        <script>
+            function dosomething(){
+                alert("hello clicked button");
+            }
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // ===== Form Validation =====
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                let name = document.getElementById('name').value.trim();
+                let email = document.getElementById('email').value.trim();
+                let message = document.getElementById('message').value.trim();
+                let error = document.getElementById('formError');
+                let success = document.getElementById('formSuccess');
+
+                error.textContent = '';
+                success.hidden = true;
+
+                if (!name || !email || !message) {
+                    error.textContent = 'All fields are required.';
+                    return;
+                }
+                const emailPattern = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+                if (!emailPattern.test(email)) {
+                    error.textContent = 'Enter a valid email address.';
+                    return;
+                }
+                success.hidden = false;
+                this.reset();
+            });
+            const todoForm = document.getElementById('todoForm');
+            const todoInput = document.getElementById('todoInput');
+            const todoList = document.getElementById('todoList');
+            const clearAllBtn = document.getElementById('clearAll');
+
+            todoForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const task = todoInput.value.trim();
+                if (task) {
+                    const li = document.createElement('li');
+                    li.textContent = task;
+                    li.addEventListener('click', () => li.remove());
+                    todoList.appendChild(li);
+                    todoInput.value = '';
+                }
+            });
+
+            clearAllBtn.addEventListener('click', () => {
+                todoList.innerHTML = '';
+            });
+        </script>
+        <br>
+        &copy;copyrights reserved<br>
+    </footer>
+        
+    
+    </body>
+</html>
